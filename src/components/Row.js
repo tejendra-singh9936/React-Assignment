@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "./axios";
+import axios from "../axios";
 import "./Row.css";
 import Ticker from "react-ticker";
 
@@ -10,7 +10,6 @@ function Row({ title, fetchUrl }) {
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(fetchUrl);
-      // console.log(request.data.results);
       setMovies(request.data.results);
       return request;
     }
